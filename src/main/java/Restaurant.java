@@ -64,6 +64,17 @@ public class Restaurant {
         return name;
     }
 
+    public int dislayOrderTotal(String... selectedItemNames)
+    {
+        List<Item> selectedItems= new ArrayList<Item>();
+        for(String name:selectedItemNames)
+        {
+            Item i = findItemByName(name);
+            if (i!=null)
+                selectedItems.add(i);
+        }
+        return selectedItems.parallelStream().mapToInt((item)->item.getPrice()).sum();
+    }
 
 
 }

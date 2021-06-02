@@ -98,10 +98,13 @@ class RestaurantTest {
     public void displayOrderTotal_method_should_return_the_total_price_of_items_that_are_passed_as_arguments()
     {
        //call displayordertotal method with menu items
-        int orderTotal = restaurant.dislayOrderTotal("Sweet corn soup","Vegetable lasagne","baby corn starter");
-        assertEquals(119+269+285,orderTotal);
 
-
+            int orderTotal = restaurant.dislayOrderTotal("Sweet corn soup","Vegetable lasagne","baby corn starter");
+            int order2_Total = restaurant.dislayOrderTotal("Sweet corn soup","Vegetable lasagne");
+            System.out.println(orderTotal);
+            assertEquals(119+269+285,orderTotal);
+            assertEquals(119+269,order2_Total);
+            
     }
 
 }
